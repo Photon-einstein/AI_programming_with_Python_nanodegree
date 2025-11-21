@@ -1,1 +1,1 @@
-# AI_programming_with_Python_nanodegree
+# AI programming with Python nanodegree
