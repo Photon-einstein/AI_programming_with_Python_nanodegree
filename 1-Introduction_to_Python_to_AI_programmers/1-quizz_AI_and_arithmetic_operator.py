@@ -12,13 +12,15 @@ accuracy_scores = [85.5, 90.2, 87.3]
 # Calculate the average accuracy
 average_accuracy = sum(accuracy_scores) / len(accuracy_scores)
 
-print(f"The average prediction accuracy over the last three months is {average_accuracy:.2f}%")
+print(
+    f"The average prediction accuracy over the last three months is {average_accuracy:.2f}%"
+)
 
 # Quiz 2: Managing Data Storage for Machine Learning Projects
 # Scenario:
-# You are optimizing the data storage for a machine learning project. 
-# You have two datasets of image files for training. 
-# One dataset contains 4000 images, and the other contains 3000 images. 
+# You are optimizing the data storage for a machine learning project.
+# You have two datasets of image files for training.
+# One dataset contains 4000 images, and the other contains 3000 images.
 # Each image is 256KB in size. Additionally, you receive a new storage device with 2048MB capacity.
 
 # Tasks:
