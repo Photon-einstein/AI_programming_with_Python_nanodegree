@@ -126,3 +126,47 @@ if nearest_batch == correct_ans:
     print("Good job!")
 else:
     print("Not quite. Did you assign your result to `nearest_batch`?")
+
+# Other exercise question:
+
+num_list = [
+    422,
+    136,
+    524,
+    85,
+    96,
+    719,
+    85,
+    92,
+    10,
+    17,
+    312,
+    542,
+    87,
+    23,
+    86,
+    191,
+    116,
+    35,
+    173,
+    45,
+    149,
+    59,
+    84,
+    69,
+    113,
+    166,
+]
+
+max_odd_numbers = 5
+sum_odd_numbers = 0
+num_odd_numbers = 0
+
+for num in num_list:
+    if num % 2 == 1:
+        sum_odd_numbers += num
+        num_odd_numbers += 1
+        if num_odd_numbers >= max_odd_numbers:
+            break
+
+print(f"Sum odd numbers is {sum_odd_numbers}")
