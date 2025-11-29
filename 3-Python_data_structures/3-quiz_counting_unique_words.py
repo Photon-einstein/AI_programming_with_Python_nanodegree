@@ -1,5 +1,5 @@
 # Quiz: Count Unique Words in AI Model Descriptions
-# Your task for this quiz is to find the number of unique words in the text of AI model descriptions. 
+# Your task for this quiz is to find the number of unique words in the text of AI model descriptions.
 # In the code editor below, complete these three steps to get your answer.
 
 # Split model_descriptions into a list of words. Hint: You can use a string method you learned in the previous lesson.
@@ -8,22 +8,22 @@
 
 model_descriptions = "ResNet is a convolutional neural network that is 50 layers deep. MobileNet is a lightweight convolutional neural network designed for mobile and embedded vision applications. VGG is a convolutional neural network model proposed by Visual Geometry Group of Oxford University. Inception is a deep convolutional neural network architecture that has achieved state-of-the-art results."
 
-print(model_descriptions, '\n')
+print(model_descriptions, "\n")
 
 # TODO: replace None with appropriate code
 # split model_descriptions into list of words
 model_list = model_descriptions.split()
-print(model_list, '\n')
+print(model_list, "\n")
 
 # TODO: replace None with appropriate code
 # convert list to a data structure that stores unique elements
 model_set = set(model_list)
-print(model_set, '\n')
+print(model_set, "\n")
 
 # TODO: replace None with appropriate code
 # find the number of unique words
 num_unique = len(model_set)
-print(num_unique, '\n')
+print(num_unique, "\n")
 
 ### Notebook grading
 correct_answer = 36  # Adjust this according to the actual count
@@ -52,18 +52,23 @@ else:
 # Which key (model) has the highest value in model_accuracy_dict?
 
 model_accuracy_dict = {
-    'ResNet': 0.91, 'MobileNet': 0.89, 'VGG': 0.88, 'Inception': 0.92, 
-    'AlexNet': 0.85, 'EfficientNet': 0.93, 'SqueezeNet': 0.87
+    "ResNet": 0.91,
+    "MobileNet": 0.89,
+    "VGG": 0.88,
+    "Inception": 0.92,
+    "AlexNet": 0.85,
+    "EfficientNet": 0.93,
+    "SqueezeNet": 0.87,
 }
 
-print(model_accuracy_dict, '\n')
+print(model_accuracy_dict, "\n")
 
 # find number of unique keys in the dictionary
 num_models = len(model_accuracy_dict.keys())
 print(num_models)
 
 # find whether 'SqueezeNet' is a key in the dictionary
-contains_squeezenet = model_accuracy_dict.get('SqueezeNet') != None
+contains_squeezenet = model_accuracy_dict.get("SqueezeNet") != None
 print(contains_squeezenet)
 
 # create and sort a list of the dictionary's keys
@@ -81,8 +86,8 @@ print(highest_accuracy_model)
 
 correct_num_models = 7
 correct_contains_squeezenet = True
-correct_first_key = 'AlexNet'
-correct_highest_accuracy_model = 'EfficientNet'
+correct_first_key = "AlexNet"
+correct_highest_accuracy_model = "EfficientNet"
 
 if num_models != correct_num_models:
     print(f"Not quite! The number of unique models should be {correct_num_models}.")
@@ -91,6 +96,8 @@ elif contains_squeezenet != correct_contains_squeezenet:
 elif first_key != correct_first_key:
     print(f"Not quite! The first key when sorted should be {correct_first_key}.")
 elif highest_accuracy_model != correct_highest_accuracy_model:
-    print(f"Not quite! The model with the highest accuracy should be {correct_highest_accuracy_model}.")
+    print(
+        f"Not quite! The model with the highest accuracy should be {correct_highest_accuracy_model}."
+    )
 else:
     print("Nice job! You can see my solution in the next page.")
