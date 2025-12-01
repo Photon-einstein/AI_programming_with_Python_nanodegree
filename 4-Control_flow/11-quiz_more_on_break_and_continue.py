@@ -26,23 +26,24 @@ features = [
     "Feature 2: Low latency",
     "Feature 3: Scalability",
     "Feature 4: Robustness",
-    "Feature 5: Interpretability"
+    "Feature 5: Interpretability",
 ]
 
 feature_summary = ""
 max_characters = 140
 for feature in features:
-    if len(feature_summary)+1 < max_characters:
+    if len(feature_summary) + 1 < max_characters:
         if feature_summary:
-            feature_summary+="\n"+feature
+            feature_summary += "\n" + feature
         else:
-            feature_summary+=feature
+            feature_summary += feature
     else:
-        feature_summary+=feature[:140-len(feature_summary)]
+        feature_summary += feature[: 140 - len(feature_summary)]
         break
 
 # Print the resulting summary
 print(feature_summary)
+
 
 ### Notebook grading
 def get_solution(features):
@@ -51,7 +52,7 @@ def get_solution(features):
         if len(feature_summary) + len(feature) + 1 > 140:
             if feature_summary:
                 feature_summary += "\n"
-            feature_summary += feature[:140 - len(feature_summary)]
+            feature_summary += feature[: 140 - len(feature_summary)]
             break
         if feature_summary:
             feature_summary += "\n"
@@ -59,9 +60,12 @@ def get_solution(features):
 
     return feature_summary
 
+
 correct_ans = get_solution(features)
 
 if feature_summary == correct_ans:
     print("Well done!")
 else:
-    print("Make sure you're inserting spaces between each feature, and that the summary is exactly 140 characters long.")
+    print(
+        "Make sure you're inserting spaces between each feature, and that the summary is exactly 140 characters long."
+    )
