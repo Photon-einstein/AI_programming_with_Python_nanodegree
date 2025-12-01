@@ -27,10 +27,21 @@
 # Patience: The number of epochs to wait for an improvement in validation loss before stopping the training.
 # These methods help to understand the importance of monitoring model performance and stopping the training process to avoid overfitting.
 
-epoch_performances = [(1, 0.5), (2, 0.45), (3, 0.47), (4, 0.44), (5, 0.43), (6, 0.42), (7, 0.44), (8, 0.41), (9, 0.42), (10, 0.43)]
+epoch_performances = [
+    (1, 0.5),
+    (2, 0.45),
+    (3, 0.47),
+    (4, 0.44),
+    (5, 0.43),
+    (6, 0.42),
+    (7, 0.44),
+    (8, 0.41),
+    (9, 0.42),
+    (10, 0.43),
+]
 
 print("METHOD 1: Immediate Stop")
-best_loss = float('inf')
+best_loss = float("inf")
 epochs_ran = 0
 
 for epoch, val_loss in epoch_performances:
@@ -46,7 +57,7 @@ print(f"\nTotal epochs ran: {epochs_ran}")
 
 print("\nMETHOD 2: Patience")
 patience = 2
-best_loss = float('inf')
+best_loss = float("inf")
 epochs_ran = 0
 patience_counter = 0
 
@@ -59,7 +70,9 @@ for epoch, val_loss in epoch_performances:
     else:
         patience_counter += 1
         if patience_counter >= patience:
-            print(f"Stopping early at epoch {epoch} as validation loss did not improve for {patience} epochs.")
+            print(
+                f"Stopping early at epoch {epoch} as validation loss did not improve for {patience} epochs."
+            )
             break
         epochs_ran += 1
 
