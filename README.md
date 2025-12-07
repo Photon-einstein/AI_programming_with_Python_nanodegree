@@ -8,3 +8,7 @@
 - Write clear docstrings and inline comments where needed; avoid redundant comments.
 - Separate top-level definitions with two blank lines and related code blocks with a single blank line.
 - Order imports as standard library, third-party, then local modules, each grouped and alphabetized.
+
+## Python standard library
+
+https://docs.python.org/3.6/library/index.html
