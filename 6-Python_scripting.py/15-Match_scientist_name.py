@@ -15,8 +15,7 @@ def create_scientist_dict():
         if not entries:
             print("File {} not found ".format(file))
         for entry in entries:
-            data = entry.split()
-            data[0] = data[0].split(":")[0]
+            data = entry.strip().split(': ')
             if data[0] not in scientist_dict:
                 scientist_dict[data[0]] = data[1]
     return scientist_dict
