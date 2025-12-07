@@ -12,3 +12,10 @@
 ## Python standard library
 
 https://docs.python.org/3.6/library/index.html
+
+## To activate the environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
