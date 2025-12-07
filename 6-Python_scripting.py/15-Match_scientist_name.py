@@ -11,13 +11,14 @@
 def create_scientist_dict():
     file = 'scientists.txt'
     scientist_dict = dict()
-    with open(file,'r') as entries:
-        if not entries:
-            print("File {} not found ".format(file))
-        for entry in entries:
-            data = entry.strip().split(': ')
-            if data[0] not in scientist_dict:
-                scientist_dict[data[0]] = data[1]
+    try:
+        with open(file,'r') as entries:
+            for entry in entries:
+                data = entry.strip().split(': ')
+                if data[0] not in scientist_dict:
+                    scientist_dict[data[0]] = data[1]
+    except FileNotFoundError:
+        print("The file {} was not found.".format(file))
     return scientist_dict
 
 
@@ -62,5 +63,5 @@ def get_scientist_name():
 
 if __name__ == "__main__":
     scientist_dict = create_scientist_dict()
-    if len(scientist_dict) > 0:
+    if scientist_dict:
         get_scientist_name()
