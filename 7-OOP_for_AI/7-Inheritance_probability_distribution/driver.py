@@ -6,7 +6,7 @@ if __name__ == "__main__":
     gaussian_one = Gaussian(25, 3)
     gaussian_two = Gaussian(30, 2)
 
-    # initialize a third gaussian distribution reading in a data efile
+    # initialize a third gaussian distribution reading in a data file
     gaussian_three = Gaussian()
     gaussian_three.read_data_file('numbers.txt')
     gaussian_three.calculate_mean()
