@@ -1,0 +1,4 @@
+# requirements.txt
+torch
+torchvision==0.24.0
+Pillow>=8
