@@ -17,9 +17,9 @@
 
 # Functions below defined to help with "Checking your code", specifically
 # running these functions with the appropriate input arguments within the
-# main() funtion will print out what's needed for "Checking your code"
+# main() function will print out what's needed for "Checking your code"
 #
-def check_command_line_arguments(in_arg):
+def check_command_line_arguments(in_arg) -> None:
     """
     For Lab: Classifying Images - 7. Command Line Arguments
     Prints each of the command line arguments passed in as parameter in_arg,
@@ -35,7 +35,7 @@ def check_command_line_arguments(in_arg):
             "* Doesn't Check the Command Line Arguments because 'get_input_args' hasn't been defined."
         )
     else:
-        # prints command line agrs
+        # prints command line args
         print(
             "Command Line Arguments:\n     dir =",
             in_arg.dir,
@@ -307,7 +307,7 @@ def check_calculating_results(results_dic, results_stats_dic):
         n_class_cnotd = 0
         n_match_breed = 0
 
-        # Interates through results_dic dictionary to recompute the statistics
+        # Iterates through results_dic dictionary to recompute the statistics
         # outside of the calculates_results_stats() function
         for key in results_dic:
 

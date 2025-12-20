@@ -67,4 +67,16 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    None
+    with open(dogfile, encoding="utf-8") as f:
+        dog_names_dict = dict()
+        for line in f:
+            dog_names_dict[line.strip().lower()] = 1
+        for key, vals in results_dic.items():
+            pet_label = vals[0].strip().lower()
+            # Classifier may return multiple names separated by commas
+            cls_raw = (vals[1] or "").strip().lower()
+            cls_names = [s.strip() for s in cls_raw.split(",")] if cls_raw else []
+            label_boolean = 1 if pet_label in dog_names_dict else 0
+            classifier_boolean = 1 if any(n in dog_names_dict for n in cls_names) else 0
+            results_dic[key].extend([label_boolean, classifier_boolean])
+            
