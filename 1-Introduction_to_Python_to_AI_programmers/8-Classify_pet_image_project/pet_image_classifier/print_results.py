@@ -15,7 +15,7 @@
 #             function and results for the function call within main.
 #            -The results statistics dictionary as results_stats_dic within
 #             print_results function and results_stats for the function call within main.
-#            -The CNN model architecture as model wihtin print_results function
+#            -The CNN model architecture as model within print_results function
 #             and in_arg.arch for the function call within main.
 #            -Prints Incorrectly Classified Dogs as print_incorrect_dogs within
 #             print_results function and set as either boolean value True or
@@ -67,4 +67,25 @@ def print_results(
     Returns:
            None - simply printing results.
     """
-    None
+    print("\nNumber of Images: {}".format(results_stats_dic["n_images"]))
+    print("Number of Dog Images: {}".format(results_stats_dic["n_dogs_img"]))
+    print("Number of \"Not-a\" Dog Images: {}".format(results_stats_dic["n_notdogs_img"]))
+    print("% Correct Dogs: {}%".format(results_stats_dic["pct_correct_dogs"]))
+    print("% Correct Breed: {}%".format(results_stats_dic["pct_correct_breed"]))
+    print("% Correct \"Not-a\" Dog: {}%".format(results_stats_dic["pct_correct_notdogs"]))
+    n_correct_dogs = round(results_stats_dic["pct_correct_dogs"] * results_stats_dic["n_dogs_img"] / 100)
+    n_correct_notdogs = round(results_stats_dic["pct_correct_notdogs"] * results_stats_dic["n_notdogs_img"] / 100)
+
+
+    if print_incorrect_dogs and (n_correct_dogs+n_correct_notdogs != results_stats_dic["n_images"]):
+        for key in results_dic:
+            # Misclassified dogs: exactly one of [is-a-dog, classified-as-dog] is 1
+            if sum(results_dic[key][3:]) == 1:
+                print("Misclassified dog | Pet image: {}, Classifier Label: {}".format(results_dic[key][0], results_dic[key][1]))
+   
+    
+    n_correct_breed = round(results_stats_dic["pct_correct_breed"] * results_stats_dic["n_dogs_img"] / 100)
+    if print_incorrect_breed and n_correct_dogs != n_correct_breed:
+        for key in results_dic:
+            if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
+                print("Misclassified Breed | Pet image: {}, Classifier Label: {}".format(results_dic[key][0], results_dic[key][1]))
