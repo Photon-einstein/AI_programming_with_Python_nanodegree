@@ -6,7 +6,7 @@
 # DATE CREATED:
 # REVISED DATE:
 # PURPOSE: Create a function calculates_results_stats that calculates the
-#          statistics of the results of the programrun using the classifier's model
+#          statistics of the results of the program run using the classifier's model
 #          architecture to classify the images. This function will use the
 #          results in the results dictionary to calculate these statistics.
 #          This function will then put the results statistics in a dictionary
@@ -70,4 +70,33 @@ def calculates_results_stats(results_dic):
     """
     # Replace None with the results_stats_dic dictionary that you created with
     # this function
-    return None
+    results_stats_dic = dict()
+    results_stats_dic["n_images"] = len(results_dic)
+    n_A_correct_class_dogs = 0
+    n_B_pet_dog = 0
+    n_C_correct_class_not_dog = 0
+    n_D_not_dog_image = 0
+    n_E_match_dog_breed = 0
+    for key in results_dic:
+        # check if we have a dog
+        if results_dic[key][3] == 1:
+            n_B_pet_dog+=1
+            # check if we have a correct classification as a dog
+            if results_dic[key][4] == 1:
+                    n_A_correct_class_dogs+=1
+            # check if we have a correct classification of a dog's breed
+            if results_dic[key][2] == 1:
+                    n_E_match_dog_breed+=1
+        else:
+            # not dog image:
+            n_D_not_dog_image+=1
+            if results_dic[key][4] == 0:
+                    n_C_correct_class_not_dog+=1
+
+    results_stats_dic["n_dogs_img"] = n_B_pet_dog
+    results_stats_dic["n_notdogs_img"] = n_D_not_dog_image
+    results_stats_dic["pct_correct_dogs"] = n_A_correct_class_dogs / n_B_pet_dog * 100
+    results_stats_dic["pct_correct_notdogs"] = n_C_correct_class_not_dog / n_D_not_dog_image * 100
+    results_stats_dic["pct_correct_breed"] = n_E_match_dog_breed / n_B_pet_dog * 100
+
+    return results_stats_dic

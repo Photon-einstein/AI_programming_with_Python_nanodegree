@@ -22,6 +22,7 @@
 ##
 # Imports classifier function for using CNN to classify images
 from classifier import classifier
+from pathlib import Path
 
 
 # TODO 3: Define classify_images function below, specifically replace the None
@@ -66,4 +67,26 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    None
+
+    # iterate through the dictionary
+    for filename in results_dic:
+        full_path = Path(images_dir) / filename
+
+        # Defaults if file missing or classifier fails
+        label_cleaned = ""
+        match = 0
+
+        if full_path.exists() and full_path.is_file() and model:
+            try:
+                raw_label = classifier(str(full_path), model)
+                label_cleaned = raw_label.lower().strip()
+                # split on commas and compare equality to avoid substring false-positives
+                classifier_labels = [lbl.strip() for lbl in label_cleaned.split(",")]
+                pet_label = results_dic[filename][0].lower().strip()
+                match = 1 if pet_label in classifier_labels else 0
+            except Exception:
+                # keep defaults: empty label and no match
+                pass
+
+        # Extend the results list with classifier label and match
+        results_dic[filename].extend([label_cleaned, match])

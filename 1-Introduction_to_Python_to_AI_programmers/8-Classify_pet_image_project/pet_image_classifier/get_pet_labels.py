@@ -18,7 +18,7 @@
 ##
 # Imports python modules
 from os import listdir
-
+from os.path import splitext
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create
@@ -41,6 +41,41 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
-    return None
+    ## Retrieve the filenames from folder pet_images/
+    filename_list = listdir(image_dir)
+    print("\nDirectory to look for the files: {}".format(image_dir))
+    for idx in range(0, len(filename_list)):
+      print("{:2d} file: {:>25}".format(idx + 1, filename_list[idx]) )
+    print("\n")
+
+    ## Creates empty dictionary named results_dic
+    results_dic = dict()
+
+    ## Build labels from filenames
+    label_list = []
+    for fname in filename_list:
+        # Skip hidden/system files (e.g., .DS_Store)
+        if fname.startswith('.'):
+            continue
+
+        # Normalize: lowercase, drop extension, split by underscores
+        stem = splitext(fname.lower())[0]
+        tokens = stem.split('_')
+
+        # Keep only alphabetic parts and join with spaces
+        label = " ".join(t for t in tokens if t.isalpha()).strip()
+
+        # Collect label list (optional)
+        label_list.append(label)
+
+        # Populate results_dic: key = original filename, value = [label]
+        if fname not in results_dic:
+            results_dic[fname] = [label]
+        else:
+            print(f"Warning: duplicate filename encountered: {fname}")
+
+    ## Determines number of items in dictionary
+    items_in_dic = len(results_dic)
+    print("\nDictionary results_dic - n items=", items_in_dic)
+
+    return results_dic

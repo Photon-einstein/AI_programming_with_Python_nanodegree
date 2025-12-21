@@ -26,7 +26,7 @@ test_image = "pet_images/Collie_03797.jpg"
 model = "vgg"
 
 # Demonstrates classifier() functions usage
-# NOTE: image_classication is a text string - It contains mixed case(both lower
+# NOTE: image_classification is a text string - It contains mixed case(both lower
 # and upper case letter) image labels that can be separated by commas when a
 # label has more than one word that can describe it.
 image_classification = classifier(test_image, model)
