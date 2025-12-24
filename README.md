@@ -19,3 +19,19 @@ https://docs.python.org/3.6/library/index.html
 python3 -m venv .venv
 source .venv/bin/activate
 ```
+
+## Conda's installation commands
+
+```bash
+conda create -n course_2 python=3
+conda activate course_2
+conda list
+conda install numpy pandas matplotlib
+
+conda update --all
+conda upgrade --all
+
+conda deactivate
+```
+
+[Conda Command reference guide](https://docs.conda.io/projects/conda/en/latest/commands/index.html)
