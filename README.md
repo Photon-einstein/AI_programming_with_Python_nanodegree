@@ -17,7 +17,16 @@ https://docs.python.org/3.6/library/index.html
 
 ```bash
 python3 -m venv .venv
+pip freeze > requirements.txt
+pip install -r requirements.txt
 source .venv/bin/activate
+```
+
+## To get the requirements and install from it:
+
+```bash
+pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Conda's installation commands
@@ -26,12 +35,28 @@ source .venv/bin/activate
 conda create -n course_2 python=3
 conda activate course_2
 conda list
+conda env list
 conda install numpy pandas matplotlib
 
 conda update --all
 conda upgrade --all
+conda env export > environment.yaml
+conda env create -f environment.yaml
+conda env remove -n env_name
 
 conda deactivate
 ```
 
 [Conda Command reference guide](https://docs.conda.io/projects/conda/en/latest/commands/index.html)
+
+## To start Jupyter notebook:
+
+```bash
+jupyter notebook
+```
+
+[Jupyter documentation](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/examples_index.html)
+
+## Numpy:
+
+[Numpy official user guide](https://numpy.org/doc/stable/user/index.html)

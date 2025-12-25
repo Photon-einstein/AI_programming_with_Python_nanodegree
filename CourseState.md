@@ -1,8 +1,8 @@
 # Course State
 
-Page link: https://realpython.com/instance-class-and-static-methods-demystified/
+Page link: https://learn.udacity.com/nd089?version=12.1.6&partKey=cd0666&lessonKey=ls0519&conceptKey=36e6ae2d-5a67-4127-a692-05b3705a3da7
 
-Page set point: "Now it’s time to call these demo methods in a new REPL session."
+Page set point: "numpy.dtype"
 
 ## Conda commands
 
