@@ -20,6 +20,7 @@ python3 -m venv .venv
 pip freeze > requirements.txt
 pip install -r requirements.txt
 source .venv/bin/activate
+deactivate
 ```
 
 ## To get the requirements and install from it:
