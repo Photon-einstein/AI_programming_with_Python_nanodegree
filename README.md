@@ -61,3 +61,7 @@ jupyter notebook
 ## Numpy:
 
 [Numpy official user guide](https://numpy.org/doc/stable/user/index.html)
+
+## Pandas:
+
+[Pandas official user guide](https://pandas.pydata.org/pandas-docs/stable/)
