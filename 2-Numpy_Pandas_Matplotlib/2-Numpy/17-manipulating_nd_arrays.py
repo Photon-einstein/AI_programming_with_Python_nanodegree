@@ -13,16 +13,22 @@ X = np.arange(1, 26).reshape(5, 5)
 Y = X[X % 2 == 1]
 
 ### Notebook grading
-X_solution = np.arange(1,26).reshape(5,5)
-Y_solution= X_solution[X_solution % 2 != 0]
+X_solution = np.arange(1, 26).reshape(5, 5)
+Y_solution = X_solution[X_solution % 2 != 0]
 
 if type(X) != np.ndarray or type(Y) != np.ndarray:
     print("`X` and `Y` should both be ndarrays")
 elif np.array_equal(X, X_solution) and np.array_equal(Y, Y_solution):
     print("Nice work! You can view my solution below")
 elif X.shape != X_solution.shape:
-    print("Your answer for `X` has a shape of {} but it should be 5 x 5".format(X.shape))
+    print(
+        "Your answer for `X` has a shape of {} but it should be 5 x 5".format(X.shape)
+    )
 elif len(Y) != len(Y_solution):
-    print("Your answer for `Y` has a length of {} but it should have a length of 13".format(len(Y)))
+    print(
+        "Your answer for `Y` has a length of {} but it should have a length of 13".format(
+            len(Y)
+        )
+    )
 else:
     print("Your answers have the right shape but incorrect values")
