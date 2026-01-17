@@ -55,3 +55,33 @@ print("\nData:\n", df)
 
 # DataFrame.sort_index() sorts by an axis:
 print("\nDataFrame.sort_index() sorts by an axis:\n", df.sort_index(axis=1, ascending=False))
+
+# DataFrame.sort_values() sorts by values:
+print("\nDataFrame.sort_values() sorts by values:\n", df.sort_values(by="B"))
+
+# For a DataFrame, passing a single label selects a columns and yields a Series equivalent to df.A:
+print("\nFor a DataFrame, passing a single label selects a columns and yields a Series equivalent to df.A:\n", df["A"])
+
+# For a DataFrame, passing a slice : selects matching rows:
+print("\nFor a DataFrame, passing a slice : selects matching rows:\n", df[0:3])
+
+# Selecting a row matching a label:
+print("\nSelecting a row matching a label:\n", df.loc[dates[0]])
+
+# Selecting all rows (:) with a select column labels:
+print("\nSelecting all rows (:) with a select column labels:\n", df.loc[:, ["A", "B"]])
+
+# For label slicing, both endpoints are included:
+print("\nFor label slicing, both endpoints are included:\n", df.loc["20130102":"20130104", ["A", "B"]])
+
+# Selecting a single row and column label returns a scalar:
+print("\nSelecting a single row and column label returns a scalar:\n", df.loc[dates[0], "A"])
+
+# For getting fast access to a scalar (equivalent to the prior method):
+print("\nFor getting fast access to a scalar (equivalent to the prior method):\n", df.at[dates[0], "A"])
+
+# Select via the position of the passed integers:
+print("\nSelect via the position of the passed integers:\n", df.iloc[3])
+
+# Integer slices acts similar to NumPy/Python:
+print("\nInteger slices acts similar to NumPy/Python:\n", df.iloc[3:5, 0:2])
