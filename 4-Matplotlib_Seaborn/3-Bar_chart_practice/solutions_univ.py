@@ -58,7 +58,7 @@ def bar_chart_solution_2():
     # Compute largest proportion
     # Returns the sum of all not-null values in `type` column
     n_pokemon = pkmn_types['type'].value_counts().sum()
-    max_type_count = type_counts[0]
+    max_type_count = type_counts.iloc[0]
     max_prop = max_type_count / n_pokemon
 
     # establish tick locations and create plot
