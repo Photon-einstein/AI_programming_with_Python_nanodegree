@@ -94,5 +94,5 @@ else:
     print("book_ratings was correctly updated")
 
 # From the DataFrame above can you now pick all the books that had a rating of 5?
-books_with_rating_5 = book_ratings[(book_ratings == 5).any(axis=1)]['Book Title']
+books_with_rating_5 = book_ratings[(book_ratings == 5).any(axis=1)]["Book Title"]
 print("\nBooks that had a rating of 5:\n", books_with_rating_5)
