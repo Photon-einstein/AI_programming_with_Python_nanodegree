@@ -8,7 +8,7 @@ print("\ns =\n", s)
 dates = pd.date_range("20130101", periods=6)
 print("\ndates:\n", dates)
 
-# Creating a DataFrame by passing a NumPy array with a datetime index using date_range() 
+# Creating a DataFrame by passing a NumPy array with a datetime index using date_range()
 # and labeled columns:
 df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
 print("\ndf:\n", df)
@@ -42,7 +42,10 @@ print("\ndf columns:\n", df.columns)
 
 # Return a NumPy representation of the underlying data with DataFrame.to_numpy() without
 # the index or column labels:
-print("\nNumPy representation of the underlying data without the index or column labels:\n", df.to_numpy())
+print(
+    "\nNumPy representation of the underlying data without the index or column labels:\n",
+    df.to_numpy(),
+)
 
 # describe() shows a quick statistic summary of your data:
 print("\nQuick statistic summary of your data:\n", df.describe())
@@ -54,13 +57,19 @@ print("\nData transposed:\n", df.T)
 print("\nData:\n", df)
 
 # DataFrame.sort_index() sorts by an axis:
-print("\nDataFrame.sort_index() sorts by an axis:\n", df.sort_index(axis=1, ascending=False))
+print(
+    "\nDataFrame.sort_index() sorts by an axis:\n",
+    df.sort_index(axis=1, ascending=False),
+)
 
 # DataFrame.sort_values() sorts by values:
 print("\nDataFrame.sort_values() sorts by values:\n", df.sort_values(by="B"))
 
 # For a DataFrame, passing a single label selects a columns and yields a Series equivalent to df.A:
-print("\nFor a DataFrame, passing a single label selects a columns and yields a Series equivalent to df.A:\n", df["A"])
+print(
+    "\nFor a DataFrame, passing a single label selects a columns and yields a Series equivalent to df.A:\n",
+    df["A"],
+)
 
 # For a DataFrame, passing a slice : selects matching rows:
 print("\nFor a DataFrame, passing a slice : selects matching rows:\n", df[0:3])
@@ -72,13 +81,22 @@ print("\nSelecting a row matching a label:\n", df.loc[dates[0]])
 print("\nSelecting all rows (:) with a select column labels:\n", df.loc[:, ["A", "B"]])
 
 # For label slicing, both endpoints are included:
-print("\nFor label slicing, both endpoints are included:\n", df.loc["20130102":"20130104", ["A", "B"]])
+print(
+    "\nFor label slicing, both endpoints are included:\n",
+    df.loc["20130102":"20130104", ["A", "B"]],
+)
 
 # Selecting a single row and column label returns a scalar:
-print("\nSelecting a single row and column label returns a scalar:\n", df.loc[dates[0], "A"])
+print(
+    "\nSelecting a single row and column label returns a scalar:\n",
+    df.loc[dates[0], "A"],
+)
 
 # For getting fast access to a scalar (equivalent to the prior method):
-print("\nFor getting fast access to a scalar (equivalent to the prior method):\n", df.at[dates[0], "A"])
+print(
+    "\nFor getting fast access to a scalar (equivalent to the prior method):\n",
+    df.at[dates[0], "A"],
+)
 
 # Select via the position of the passed integers:
 print("\nSelect via the position of the passed integers:\n", df.iloc[3])
