@@ -65,3 +65,11 @@ jupyter notebook
 ## Pandas:
 
 [Pandas official user guide](https://pandas.pydata.org/pandas-docs/stable/)
+
+## Sample plots in Matplotlib
+
+https://matplotlib.org/3.3.1/tutorials/introductory/sample_plots.html#sphx-glr-tutorials-introductory-sample-plots-py
+
+## Sample plots in Seaborn
+
+https://seaborn.pydata.org/examples/index.html

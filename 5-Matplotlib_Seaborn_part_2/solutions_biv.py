@@ -194,12 +194,12 @@ def additionalplot_solution_1():
     most_makes = make_frequency.index[:idx]
     fuel_econ_sub = fuel_econ.loc[fuel_econ["make"].isin(most_makes)]
 
-    make_means = fuel_econ_sub.groupby("make").mean()
+    make_means = fuel_econ_sub.groupby("make").mean(numeric_only=True)
     comb_order = make_means.sort_values("comb", ascending=False).index
 
     # plotting
     g = sb.FacetGrid(
-        data=fuel_econ_sub, col="make", col_wrap=6, size=2, col_order=comb_order
+        data=fuel_econ_sub, col="make", col_wrap=6, height=2, col_order=comb_order
     )
     # try sb.distplot instead of plt.hist to see the plot in terms of density!
     g.map(plt.hist, "comb", bins=np.arange(12, fuel_econ_sub["comb"].max() + 2, 2))
@@ -230,7 +230,7 @@ def additionalplot_solution_2():
     most_makes = make_frequency.index[:idx]
     fuel_econ_sub = fuel_econ.loc[fuel_econ["make"].isin(most_makes)]
 
-    make_means = fuel_econ_sub.groupby("make").mean()
+    make_means = fuel_econ_sub.groupby("make").mean(numeric_only=True)
     comb_order = make_means.sort_values("comb", ascending=False).index
 
     # plotting
@@ -241,7 +241,7 @@ def additionalplot_solution_2():
         y="make",
         color=base_color,
         order=comb_order,
-        ci="sd",
+        errorbar="sd",
     )
     plt.xlabel("Average Combined Fuel Eff. (mpg)")
     plt.show()
