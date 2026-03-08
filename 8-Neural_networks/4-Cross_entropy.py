@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def cross_entropy(Y, P):
     """
     This function takes as input two lists Y and P, and returns the float
