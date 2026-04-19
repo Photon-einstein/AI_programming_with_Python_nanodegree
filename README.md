@@ -89,3 +89,7 @@ https://matplotlib.org/3.3.1/tutorials/introductory/sample_plots.html#sphx-glr-t
 ## Sample plots in Seaborn
 
 https://seaborn.pydata.org/examples/index.html
+
+## Certificate of completion
+
+[Certificate of graduation](https://www.udacity.com/certificate/e/e1fc155e-c532-11f0-a0fc-53c27067ef19)
