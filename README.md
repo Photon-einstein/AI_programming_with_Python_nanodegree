@@ -1,5 +1,21 @@
 # AI programming with Python nanodegree
 
+## Projects
+
+### Project 1 — Pet Image Classifier
+
+Classify pet images using three pretrained CNN architectures (ResNet-18, AlexNet, VGG-16) and evaluate which model best identifies dog breeds vs. non-dogs. The true pet label is extracted from each image's filename and compared against the classifier's prediction. Statistics (% correct dogs, % correct breeds, % correct non-dogs) are computed to benchmark each model.
+
+- **Technologies:** Python 3, PyTorch, torchvision, PIL/Pillow, argparse
+- **Location:** `1-Introduction_to_Python_to_AI_programmers/8-Classify_pet_image_project/`
+
+### Project 2 — Flower Image Classifier (Final Project)
+
+Build and train a deep neural network to recognize 102 flower species using transfer learning (VGG-16/VGG-13). Developed first as a Jupyter notebook, then converted into two command-line applications: one for training (`train.py`) and one for inference (`predict.py`).
+
+- **Technologies:** Python 3, PyTorch, torchvision, NumPy, PIL/Pillow, matplotlib, Jupyter Notebook, GPU/CUDA support
+- **Location:** `11-Final_project/`
+
 ## PEP 8 Guidelines
 
 - Follow the official style guide for Python code: https://peps.python.org/pep-0008/
